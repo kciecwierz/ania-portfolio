@@ -368,5 +368,14 @@ a:hover{ text-decoration:underline }
   .card,
   .btn{
     transition:none;
+.card-disabled{
+  opacity: .7;
+  pointer-events: none;
+}
+
+.thumb-placeholder{
+  background: linear-gradient(135deg, rgba(31,122,109,0.14), rgba(31,122,109,0.04));
+}
+
   }
 }
