@@ -170,4 +170,3 @@ main.container{padding-top:24px}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr}
 }
-
