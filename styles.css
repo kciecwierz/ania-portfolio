@@ -1,6 +1,6 @@
 :root {
   --bg: #f3f7f6;
-  --card: rgba(255,255,255,0.75);
+  --card: rgba(255,255,255,0.78);
   --text: #0f172a;
   --muted: rgba(15,23,42,0.62);
 
@@ -89,7 +89,6 @@ a {
   border-radius: 999px;
   font-weight: 500;
   border: 1px solid transparent;
-  cursor: pointer;
 }
 
 .btn-primary {
@@ -117,23 +116,19 @@ a {
   align-items: center;
 }
 
-.hero-left h1 {
-  margin-top: 0;
-}
-
-.hero-left p {
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* PANEL POD TEKSTEM – KLUCZ DO MOBILE */
+/* panel pod tekstem — klucz na mobile */
 .hero-panel {
-  background: rgba(255,255,255,0.72);
+  background: rgba(255,255,255,0.80);
   border: 1px solid var(--line);
   border-radius: 22px;
   padding: 22px;
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(8px);
+}
+
+.hero-left p {
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .cta {
@@ -158,16 +153,32 @@ a {
 }
 
 /* ================= AVATAR + ANIMOWANY RING ================= */
+/* STABILNY — bez mask, bez bugów mobilnych */
 
-/* NIERUCHOME zdjęcie */
+.avatar-ring {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--brand),
+    var(--brand-2),
+    var(--brand)
+  );
+  animation: ring-spin 14s linear infinite;
+  display: grid;
+  place-items: center;
+  padding: 6px;
+  margin-inline: auto;
+}
+
+/* zdjęcie NIE JEST animowane */
 .avatar-photo {
-  width: 240px;
-  height: 240px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   overflow: hidden;
   background: #fff;
-  position: relative;
-  z-index: 2;
 }
 
 .avatar-photo img {
@@ -176,37 +187,7 @@ a {
   object-fit: cover;
 }
 
-/* TYLKO OBRAMOWANIE SIĘ ANIMUJE */
-.avatar-ring {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  position: relative;
-}
-
-.avatar-ring::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  padding: 4px;
-  background:
-    conic-gradient(
-      from 0deg,
-      var(--brand),
-      var(--brand-2),
-      var(--brand)
-    );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: ring-spin 12s linear infinite;
-}
-
+/* animacja dotyczy TYLKO ringa */
 @keyframes ring-spin {
   to { transform: rotate(360deg); }
 }
@@ -258,15 +239,14 @@ a {
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
-    text-align: left;
     gap: 28px;
   }
 
   .hero-panel {
-    background: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.88);
   }
 
   .avatar-ring {
-    margin-inline: auto;
+    margin-top: 24px;
   }
 }
