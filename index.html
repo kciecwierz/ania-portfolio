@@ -14,106 +14,155 @@
 </head>
 
 <body>
-
-<header class="header">
-  <div class="container header-row">
-    <div class="logo">
-      <span class="logo-mark">A</span>
-      <span class="logo-text">Ania • Portfolio</span>
-    </div>
-
-    <div class="header-actions">
-      <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-      <a class="btn btn-primary" href="#portfolio">View projects</a>
-    </div>
-  </div>
-</header>
-
-<main class="container">
-
-  <section class="hero">
-    <div class="hero-left">
-      <h1>Hi, I’m Ania.</h1>
-
-      <p class="lead">
-        I am an experienced e-learning course developer. I specialize in creating interactive and engaging educational content, mainly using tools such as Articulate Storyline 360, Canva, Vyond, and DaVinci Resolve.
-      </p>
-
-      <p class="lead">
-        I combine strong technical skills with a creative approach and a solid understanding of e-learning best practices, which enables me to design courses that genuinely support learners’ development as well as the goals of the organizations I work with. I believe that well-designed e-learning not only delivers knowledge but also inspires action and makes learning easier to apply in practice.
-      </p>
-
-      <div class="cta">
-        <a class="btn btn-primary" href="#portfolio">Browse portfolio</a>
-        <a class="btn btn-secondary" href="assets/CV_Anna_Koziej.pdf" download>Download CV</a>
-        <a class="btn btn-ghost" href="mailto:annakoziej84@gmail.com">Email</a>
+  <header class="header">
+    <div class="container header-row">
+      <div class="logo" aria-label="Site logo">
+        <span class="logo-mark" aria-hidden="true">A</span>
+        <span class="logo-text">Ania • Portfolio</span>
       </div>
 
-      <div class="mini">
-        <span class="pill">Articulate Storyline 360</span>
-        <span class="pill">Canva</span>
-        <span class="pill">Vyond</span>
-        <span class="pill">DaVinci Resolve</span>
+      <nav class="header-actions" aria-label="Header actions">
+        <!-- PODMIEŃ na prawdziwy LinkedIn Ani -->
+        <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a class="btn btn-primary" href="#portfolio">View projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="Intro">
+      <div class="hero-left">
+        <h1>Hi, I’m Ania.</h1>
+
+        <p class="lead">
+          I am an experienced e-learning course developer. I specialize in creating interactive and engaging educational content, mainly using tools such as Articulate Storyline 360, Canva, Vyond, and DaVinci Resolve. These tools allow me to create modern, visually consistent, and engaging learning materials—from interactive modules to animations and video content.
+        </p>
+
+        <p class="lead">
+          I combine strong technical skills with a creative approach and a solid understanding of e-learning best practices, which enables me to design courses that genuinely support learners’ development as well as the goals of the organizations I work with. I believe that well-designed e-learning not only delivers knowledge but also inspires action and makes learning easier to apply in practice.
+        </p>
+
+        <div class="cta" aria-label="Primary actions">
+          <a class="btn btn-primary" href="#portfolio">Browse portfolio</a>
+          <!-- Jeśli macie CV w assets/ to zostaw; jak inaczej, podmień ścieżkę -->
+          <a class="btn btn-secondary" href="assets/CV_Anna_Koziej.pdf" download>Download CV</a>
+          <a class="btn btn-ghost" href="mailto:annakoziej84@gmail.com">Email</a>
+        </div>
+
+        <div class="mini" aria-label="Tools">
+          <span class="pill">Articulate Storyline 360</span>
+          <span class="pill">Canva</span>
+          <span class="pill">Vyond</span>
+          <span class="pill">DaVinci Resolve</span>
+        </div>
       </div>
-    </div>
 
-    <aside class="hero-right">
-      <div class="avatar-ring">
-        <div class="avatar-inner">
-          <img src="assets/photo.jpg" alt="Ania profile photo">
+      <aside class="hero-right" aria-label="Profile photo">
+        <!-- ANIMUJE SIĘ TYLKO RAMKA (avatar-ring) -->
+        <div class="avatar-ring" aria-label="Animated photo frame">
+          <div class="avatar-inner">
+            <img class="avatar-img" src="assets/photo.jpg" alt="Ania profile photo">
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="portfolio" class="portfolio" aria-label="Portfolio projects">
+      <div class="portfolio-head">
+        <h2>Selected Projects</h2>
+        <p class="sub">Fast, visual “shop” view. Click a tile to open an interactive demo.</p>
+      </div>
+
+      <div class="grid">
+        <!-- 1) OCEAN -->
+        <a class="card" href="./ocean/" target="_blank" rel="noreferrer">
+          <div class="thumb">
+            <!-- jeśli masz swoje miniatury: podmień src na właściwy obrazek -->
+            <img src="assets/projects/ocean.jpg" alt="Ocean demo preview" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3>Ocean</h3>
+              <span class="chip">Storyline</span>
+            </div>
+            <div class="tags">Interactive module • Web demo</div>
+          </div>
+        </a>
+
+        <!-- 2) SAN FRANCISCO -->
+        <a class="card" href="./san-francisco/" target="_blank" rel="noreferrer">
+          <div class="thumb">
+            <img src="assets/projects/san-francisco.jpg" alt="San Francisco demo preview" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3>San Francisco</h3>
+              <span class="chip">Storyline</span>
+            </div>
+            <div class="tags">Scenario • Branching</div>
+          </div>
+        </a>
+
+        <!-- 3) GIANT PANDA -->
+        <a class="card" href="./giant-panda/" target="_blank" rel="noreferrer">
+          <div class="thumb">
+            <img src="assets/projects/giant-panda.jpg" alt="Giant Panda demo preview" loading="lazy">
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3>Giant Panda</h3>
+              <span class="chip">Storyline</span>
+            </div>
+            <div class="tags">Microlearning • Web demo</div>
+          </div>
+        </a>
+
+        <!-- 4) Placeholder -->
+        <a class="card card-disabled" href="javascript:void(0)" aria-disabled="true">
+          <div class="thumb thumb-placeholder">
+            <div class="placeholder-title">Project #4</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3>Project #4</h3>
+              <span class="chip chip-muted">Demo</span>
+            </div>
+            <div class="tags">Coming soon</div>
+          </div>
+        </a>
+
+        <!-- 5) Placeholder -->
+        <a class="card card-disabled" href="javascript:void(0)" aria-disabled="true">
+          <div class="thumb thumb-placeholder">
+            <div class="placeholder-title">Project #5</div>
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3>Project #5</h3>
+              <span class="chip chip-muted">Demo</span>
+            </div>
+            <div class="tags">Coming soon</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="Footer">
+      <div class="footer-row">
+        <div class="muted">© <span id="year"></span> Ania</div>
+
+        <div class="footer-actions">
+          <a class="btn btn-ghost" href="mailto:annakoziej84@gmail.com">Email</a>
+          <!-- PODMIEŃ na prawdziwy LinkedIn Ani -->
+          <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="btn btn-secondary" href="assets/CV_Anna_Koziej.pdf" download>CV (PDF)</a>
         </div>
       </div>
-    </aside>
-  </section>
+    </footer>
+  </main>
 
-  <section id="portfolio" class="portfolio">
-    <div class="portfolio-head">
-      <h2>Selected Projects</h2>
-      <p class="sub">Fast, visual “shop” view. Click a tile to open an interactive demo.</p>
-    </div>
-
-    <div class="grid">
-      <a class="card" href="demos/ocean/index.html" target="_blank">
-        <div class="thumb">
-          <img src="assets/projects/ocean.jpg" alt="Ocean demo">
-        </div>
-        <div class="card-body">
-          <h3>Ocean</h3>
-          <p>Interactive module • Web demo</p>
-        </div>
-      </a>
-
-      <a class="card" href="demos/san-francisco/index.html" target="_blank">
-        <div class="thumb">
-          <img src="assets/projects/sanfrancisco.jpg" alt="San Francisco demo">
-        </div>
-        <div class="card-body">
-          <h3>San Francisco</h3>
-          <p>Scenario • Branching</p>
-        </div>
-      </a>
-
-      <a class="card" href="demos/giant-panda/index.html" target="_blank">
-        <div class="thumb">
-          <img src="assets/projects/panda.jpg" alt="Giant Panda demo">
-        </div>
-        <div class="card-body">
-          <h3>Giant Panda</h3>
-          <p>Microlearning • Web demo</p>
-        </div>
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  © <span id="year"></span> Ania
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
