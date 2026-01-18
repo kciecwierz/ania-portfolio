@@ -22,10 +22,11 @@
       <span class="logo-text">Ania • Portfolio</span>
     </div>
 
-    <div class="header-actions">
-      <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank">LinkedIn ↗</a>
+    <nav class="header-actions" aria-label="Header links">
+      <!-- Wstaw prawdziwy link do LinkedIn -->
+      <a class="btn btn-ghost" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
       <a class="btn btn-primary" href="#portfolio">View projects</a>
-    </div>
+    </nav>
   </div>
 </header>
 
@@ -61,9 +62,11 @@
       </div>
     </div>
 
-    <aside class="hero-right">
-      <div class="avatar-ring">
-        <div class="avatar-photo">
+    <aside class="hero-right" aria-label="Profile">
+      <!-- animuje się TYLKO ring, zdjęcie stoi -->
+      <div class="avatar" aria-label="Profile photo">
+        <span class="ring" aria-hidden="true"></span>
+        <div class="photo">
           <img src="assets/photo.jpg" alt="Ania profile photo">
         </div>
       </div>
@@ -71,25 +74,46 @@
   </section>
 
   <section id="portfolio" class="portfolio">
-    <h2>Selected Projects</h2>
+    <div class="portfolio-head">
+      <h2>Selected Projects</h2>
+      <p class="sub">Fast, visual “shop” view. Click a tile to open an interactive demo.</p>
+    </div>
 
     <div class="grid">
-      <a class="card" href="/ocean/" target="_blank">
-        <img src="assets/projects/ocean.jpg" alt="">
-        <h3>Ocean</h3>
-        <p>Interactive module • Web demo</p>
+      <a class="card" href="/ocean/" target="_blank" rel="noreferrer">
+        <div class="thumb">
+          <img src="assets/projects/ocean.jpg" alt="Ocean demo cover">
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Ocean</h3><span class="chip">Storyline</span>
+          </div>
+          <div class="tags">Interactive module • Web demo</div>
+        </div>
       </a>
 
-      <a class="card" href="/san-francisco/" target="_blank">
-        <img src="assets/projects/sf.jpg" alt="">
-        <h3>San Francisco</h3>
-        <p>Scenario • Branching</p>
+      <a class="card" href="/san-francisco/" target="_blank" rel="noreferrer">
+        <div class="thumb">
+          <img src="assets/projects/sf.jpg" alt="San Francisco demo cover">
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>San Francisco</h3><span class="chip">Storyline</span>
+          </div>
+          <div class="tags">Scenario • Branching</div>
+        </div>
       </a>
 
-      <a class="card" href="/giant-panda/" target="_blank">
-        <img src="assets/projects/panda.jpg" alt="">
-        <h3>Giant Panda</h3>
-        <p>Microlearning • Web demo</p>
+      <a class="card" href="/giant-panda/" target="_blank" rel="noreferrer">
+        <div class="thumb">
+          <img src="assets/projects/panda.jpg" alt="Giant Panda demo cover">
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>Giant Panda</h3><span class="chip">Storyline</span>
+          </div>
+          <div class="tags">Microlearning • Web demo</div>
+        </div>
       </a>
     </div>
   </section>
@@ -97,7 +121,9 @@
 </main>
 
 <footer class="footer">
-  © <span id="year"></span> Ania
+  <div class="container footer-row">
+    <div class="muted">© <span id="year"></span> Ania</div>
+  </div>
 </footer>
 
 <script>
